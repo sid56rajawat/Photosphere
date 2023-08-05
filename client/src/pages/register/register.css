@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  max-width: 470px;
+  padding: 28px;
+  margin: 0 28px;
+  box-shadow: 0 15px 20px #abb2b9;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #2f4f4f;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.input-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 15px;
+}
+.input-box:nth-child(2n) {
+  justify-content: end;
+}
+.input-box input {
+  height: 40px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.input-box input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.alert p {
+  font-size: 14px;
+  font-style: italic;
+  color: dimgray;
+  margin: 5px 0;
+  padding: 10px;
+}
+.login p {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: dimgray;
+  margin: 5px 0;
+  padding: 10px;
+}
+.alert a{
+  text-decoration: none;
+}
+.login a{
+    text-decoration: none;
+}
+.alert a:hover {
+  text-decoration: underline;
+}
+.login a:hover {
+    text-decoration: underline;
+  }
+.button-container {
+  margin: 15px 0;
+}
+.button-container button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #aa076b, #61045f);
+}
+.button-container button:hover {
+  background-image: linear-gradient(to right, #61045f, #aa076b);
+}
+
+@media (max-width: 600px) {
+  .container {
+    min-width: 280px;
+  }
+  .content {
+    max-height: 380px;
+    overflow: auto;
+  }
+  .input-box {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .input-box:nth-child(2n) {
+    justify-content: space-between;
+  }
+  .content::-webkit-scrollbar {
+    width: 0;
+  }
+}
