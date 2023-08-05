@@ -6,14 +6,13 @@ import Logo from "./components/ui/Logo";
 // import MyApp from "./App";
 import reportWebVitals from "./reportWebVitals";
 // import Register from "./pages/register/register";
-import Login from "./pages/login/login";
-
+import Login from "./pages/login/login.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Logo name="Photosphere" />
-    <Login/>
+    <Login />
   </React.StrictMode>
 );
 

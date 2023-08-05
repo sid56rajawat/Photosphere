@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +5,10 @@
   font-family: sans-serif;
 }
 body {
-  margin-top: 4%;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 .container {
   max-width: 470px;
@@ -66,18 +65,18 @@ h2 {
   margin: 5px 0;
   padding: 10px;
 }
-.alert a{
+.alert a {
   text-decoration: none;
 }
-.login a{
-    text-decoration: none;
+.login a {
+  text-decoration: none;
 }
 .alert a:hover {
   text-decoration: underline;
 }
 .login a:hover {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
+}
 .button-container {
   margin: 15px 0;
 }

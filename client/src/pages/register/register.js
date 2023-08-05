@@ -1,4 +1,6 @@
 import "./register.css";
+import "../login/login.js"
+import login from "../login/login.js";
 
 function Input({ placeholder, type, name }) {
   return (
@@ -62,7 +64,7 @@ export default function Register() {
           </div>
           <div className="login">
             <p>
-              Already Have an account? <a href="#">Log in</a>
+              Already Have an account? <a href="./pages/login/login.js">Log in</a>
             </p>
           </div>
         </form>
@@ -71,17 +73,5 @@ export default function Register() {
   );
 }
 
-export default function Register(){
-    return(
-        <div>
-            <form action="#">
-                <Input placeholder="Email address" type="email" name="email"/>
-                <Input placeholder="Full Name" type="text" name="fullName"/>
-                <Input placeholder="Username" type="text" name="userName"/>
-                <Input placeholder="Password" type="password" name="password"/>
-                <input class="submit-button" type="submit" value="Sign Up"/>
-            </form>
-        </div>
-    );
-}
+
 

@@ -1,4 +1,5 @@
 import "./login.css";
+import "../register/register.js"
 
 function Input({ placeholder, type, name }) {
   return (
