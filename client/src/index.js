@@ -4,12 +4,13 @@ import "./assets/css/index.css";
 import Logo from "./components/ui/Logo";
 import MyApp from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Register from "./pages/register/register";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Logo name="Photosphere" />
-    <MyApp />
+    <Register/>
   </React.StrictMode>
 );
 
