@@ -6,6 +6,7 @@ function Input({ placeholder, type, name }) {
   );
 }
 
+
 export default function Register() {
   return (
     <body>
@@ -69,3 +70,18 @@ export default function Register() {
     </body>
   );
 }
+
+export default function Register(){
+    return(
+        <div>
+            <form action="#">
+                <Input placeholder="Email address" type="email" name="email"/>
+                <Input placeholder="Full Name" type="text" name="fullName"/>
+                <Input placeholder="Username" type="text" name="userName"/>
+                <Input placeholder="Password" type="password" name="password"/>
+                <input class="submit-button" type="submit" value="Sign Up"/>
+            </form>
+        </div>
+    );
+}
+
