@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+@font-face {
+  font-family: dancingScript;
+  src: url("../fonts/DancingScript-SemiBold.ttf");
+}
 
 body {
   margin: 0;
@@ -17,7 +20,7 @@ code {
 .logo {
   /* border: 1px solid; */
   text-align: center;
-  font-family: "Dancing Script", cursive;
+  font-family: dancingScript, cursive;
   font-size: 30px;
   margin: 5px 0px;
 }
