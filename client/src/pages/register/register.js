@@ -14,7 +14,7 @@ export default function Register(){
                 <Input placeholder="Full Name" type="text" name="fullName"/>
                 <Input placeholder="Username" type="text" name="userName"/>
                 <Input placeholder="Password" type="password" name="password"/>
-                <input type="submit" value="Sign Up"/>
+                <input class="submit-button" type="submit" value="Sign Up"/>
             </form>
         </div>
     );
