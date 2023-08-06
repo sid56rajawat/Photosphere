@@ -20,3 +20,5 @@
    7. utils - utility / helper functions eg: date formatting
 
 Note: each folder might have `__test__` folder depending on whether it needs tesing
+
+test
