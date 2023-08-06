@@ -1,6 +1,7 @@
-import "./register.css";
-import "../login/login.js"
-import login from "../login/login.js";
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthenticationLayout from "../../layout/AuthenticationLayout";
+import Logo from "../../components/ui/Logo";
 
 function Input({ placeholder, type, name }) {
   return (
@@ -8,13 +9,12 @@ function Input({ placeholder, type, name }) {
   );
 }
 
-
 export default function Register() {
   return (
-    <body>
+    <AuthenticationLayout>
       <div className="container">
         <form action="#" method="post">
-          <h2>Registration</h2>
+          <Logo name="Photosphere" />
           <div className="content">
             <div className="input-box">
               <Input
@@ -51,27 +51,20 @@ export default function Register() {
           </div>
           <div className="alert">
             <p>
-              People who use our service may have uploaded your contact
-              information to PhotoSphere. <a href="#">Learn more</a>
-            </p>
-            <p>
               By signing up, you agree to our <a href="#">Terms</a>,{" "}
               <a href="#">Privacy Policy</a> and <a href="#"> Cookies Policy</a>
             </p>
           </div>
           <div className="button-container">
-            <button type="submit">Register</button>
+            <button type="submit">Sign Up</button>
           </div>
-          <div className="login">
+          <div className="alert">
             <p>
-              Already Have an account? <a href="./pages/login/login.js">Log in</a>
+              Already Have an account? <Link to="/login">Log in</Link>
             </p>
           </div>
         </form>
       </div>
-    </body>
+    </AuthenticationLayout>
   );
 }
-
-
-

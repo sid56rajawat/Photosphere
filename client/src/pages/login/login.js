@@ -1,5 +1,7 @@
-import "./login.css";
-import "../register/register.js"
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthenticationLayout from "../../layout/AuthenticationLayout";
+import Logo from "../../components/ui/Logo";
 
 function Input({ placeholder, type, name }) {
   return (
@@ -9,10 +11,10 @@ function Input({ placeholder, type, name }) {
 
 export default function login() {
   return (
-    <body>
+    <AuthenticationLayout>
       <div className="container">
         <form action="#" method="post">
-          <h2>Login</h2>
+          <Logo name="Photosphere" />
           <div className="content">
             <div className="input-box">
               <Input
@@ -34,13 +36,13 @@ export default function login() {
           <div className="button-container">
             <button type="submit">Login</button>
           </div>
-          <div className="register">
+          <div className="alert">
             <p>
-              Don't have an account? <a href="#">Register</a>
+              Don't have an account? <Link to="/register">Register</Link>
             </p>
           </div>
         </form>
       </div>
-    </body>
+    </AuthenticationLayout>
   );
 }

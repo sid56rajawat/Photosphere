@@ -1,6 +1,9 @@
 :root {
   --seperator: rgb(219, 219, 219);
   --active-input: rgb(119, 119, 119);
+  --primary-button: rgb(0, 149, 246);
+  --primary-button-hover: rgb(24, 119, 242);
+  --secondary-background: rgb(250, 250, 250);
 }
 * {
   margin: 0;
@@ -51,6 +54,7 @@
   border-radius: 1px;
   border: 1px solid var(--seperator);
   outline: none;
+  background-color: var(--secondary-background);
 }
 .input-box input:is(:focus) {
   border: 1px solid var(--active-input);
@@ -84,10 +88,10 @@
   color: #fff;
   border: none;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #aa076b, #61045f);
+  background-color: var(--primary-button);
 }
 .button-container button:hover {
-  background-image: linear-gradient(to right, #61045f, #aa076b);
+  background-color: var(--primary-button-hover);
 }
 
 @media (max-width: 600px) {
