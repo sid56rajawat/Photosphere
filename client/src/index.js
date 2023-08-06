@@ -1,18 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./assets/css/index.css";
-import Logo from "./components/ui/Logo";
-// import MyApp from "./App";
 import reportWebVitals from "./reportWebVitals";
-// import Register from "./pages/register/register";
-import Login from "./pages/login/login.js";
+import Logo from "./components/ui/Logo";
+import Login from "./pages/login/login";
+import Register from "./pages/register/register";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Logo name="Photosphere" />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Logo name="Photosphere" />
-    <Login />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
