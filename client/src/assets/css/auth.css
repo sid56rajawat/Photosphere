@@ -60,6 +60,12 @@
   border: 1px solid var(--active-input);
 }
 
+.invalid {
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
 .alert p {
   text-align: center;
   font-size: 14px;

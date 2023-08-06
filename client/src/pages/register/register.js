@@ -1,50 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
-
-function Input({ placeholder, type, name }) {
-  return (
-    <input type={type} placeholder={placeholder} id={name} name={name}></input>
-  );
-}
+import axios from "axios";
 
 export default function Register() {
+  const [fullName, setFullName] = useState();
+  const [userName, setUserName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = (e) => {
+    document.getElementsByClassName("user")[0].style.display = "none";
+    e.preventDefault();
+    axios
+      .post(
+        "/api/register",
+        {
+          fullName,
+          email,
+          userName,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((response) => {
+        let msg = response.data;
+        if (msg === "invalid username") {
+          document.getElementsByClassName("user")[0].style.display = "inline";
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <AuthenticationLayout>
       <div className="container">
-        <form action="#" method="post">
+        <form onSubmit={handleSubmit}>
           <Logo name="Photosphere" />
           <div className="content">
             <div className="input-box">
-              <Input
+              <input
                 placeholder="Email address"
                 type="email"
                 name="email"
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
             <div className="input-box">
-              <Input
+              <input
                 placeholder="Full Name"
                 type="text"
                 name="fullName"
+                onChange={(e) => setFullName(e.target.value)}
                 required
               />
             </div>
+            <p className="invalid user">Invalid username</p>
             <div className="input-box">
-              <Input
+              <input
                 placeholder="Username"
                 type="text"
                 name="userName"
+                onChange={(e) => setUserName(e.target.value)}
                 required
               />
             </div>
             <div className="input-box">
-              <Input
+              <input
                 placeholder="Password"
                 type="password"
                 name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required
               />
             </div>
