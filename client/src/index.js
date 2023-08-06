@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/index.css";
 import Logo from "./components/ui/Logo";
-import MyApp from "./App";
+// import MyApp from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Register from "./pages/register/register";
+// import Register from "./pages/register/register";
+import Login from "./pages/login/login.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Logo name="Photosphere" />
-    <Register/>
+    <Login />
   </React.StrictMode>
 );
 
