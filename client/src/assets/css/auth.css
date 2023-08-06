@@ -51,7 +51,7 @@
   height: 40px;
   width: 100%;
   padding: 0 10px;
-  border-radius: 1px;
+  border-radius: 2px;
   border: 1px solid var(--seperator);
   outline: none;
   background-color: var(--secondary-background);
@@ -62,7 +62,7 @@
 
 .alert p {
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
   color: dimgray;
   margin: 5px 0;
