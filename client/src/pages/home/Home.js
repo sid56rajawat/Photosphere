@@ -7,6 +7,7 @@ export default function Home(){
             <div className = "card home-card">
                 <h5>Vatsal</h5> 
                 <Post />
+                <Post />
             </div>
         </div>
     )

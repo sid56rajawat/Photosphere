@@ -4,7 +4,7 @@ import "./location.css"
 export default function Location() {
   return (
     <div className='location'>
-        <p>Location</p>
+        <p>FarmHouse, Bandra</p>
     </div>
   );
 }
