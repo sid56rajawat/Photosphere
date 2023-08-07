@@ -1,0 +1,13 @@
+/* Post.css */
+
+.post {
+    width: 60%; 
+    max-width: 600px;
+    border: 1px solid #ddd;
+    margin: 20px auto; 
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  

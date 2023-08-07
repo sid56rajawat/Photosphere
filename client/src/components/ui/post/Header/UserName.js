@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserName.css';
+import './userName.css';
 
 export default function UserName() {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header/Header';
 import PostPhoto from './Postphoto/Postphoto';
 import Footer from './Footer/Footer';
-import "./Post.css";
+import "./post.css";
 
 export default function Post() {
   return (<div className='post'>

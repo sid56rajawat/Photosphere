@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfilePhoto.css';
+import './profilePhoto.css';
 
 export default function ProfilePhoto() {
   return (
