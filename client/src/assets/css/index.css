@@ -21,3 +21,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 600px) {
+  body {
+    min-width: 700px; 
+  }
+}
