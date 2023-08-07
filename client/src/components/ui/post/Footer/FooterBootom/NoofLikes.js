@@ -3,8 +3,8 @@ import "./noOflikes.css"
 
 export default function NoOfLikes(){
     return(
-    <div>
-        
+    <div className="no-of-likes">
+        1234 Likes
     </div>
     );
 }
