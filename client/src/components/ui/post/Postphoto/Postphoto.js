@@ -1,5 +1,6 @@
 import React from 'react';
 import Photo from './Photo';
+import "./postphoto.css";
 
 export default function PostPhoto() {
   return (

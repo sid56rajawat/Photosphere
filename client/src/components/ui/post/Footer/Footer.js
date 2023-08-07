@@ -1,16 +1,13 @@
 import React from "react";
-import Like from "./Like";
-import Comment from "./Comment";
-import Share from "./Share";
-import Save from "./Save";
+import FooterTop from "./FooterTop/FooterTop.js";
+import FooterBottom from "./FooterBootom/FooterBottom.js";
+import "./footer.css";
 
 export default function Footer() {
   return (
     <div className="footer">
-      <Like />
-      <Comment />
-      <Share />
-      <Save />
+      <FooterTop />
+      <FooterBottom />
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.icon {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}

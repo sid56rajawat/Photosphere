@@ -1,13 +1,4 @@
-
 .user-name {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-name h3 {
-    margin: 0;
-    font-size: 16px;
-    color: #333; 
-    margin-left: 10px;
-  }
-  
+  font-size: 16px;
+  color: black;
+}

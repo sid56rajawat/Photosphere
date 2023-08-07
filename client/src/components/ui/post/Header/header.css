@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.name-location {
+    display: flex;
+    flex-direction: column;
+}
