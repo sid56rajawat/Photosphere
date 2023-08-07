@@ -1,0 +1,111 @@
+.demo {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  height: 100%;
+  width: 20%;
+  border-right: 1px solid lightgray;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.small, .large {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.sidebarList {
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebarList .row {
+  width: 100%;
+  height: 60px;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebarList .row:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebarList #active {
+  font-weight: bolder;
+}
+
+.sidebarButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: black;
+  background: 0;
+  border: 0;
+  margin: 5px 10px 5px 25px;
+  padding: 10px 15px 10px 21px;
+  border-radius: 8px;
+  width: auto;
+  cursor: pointer;
+}
+
+.sidebarButton:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidebarButton > span {
+  display: block;
+  font-size: 18px;
+  margin-left: 5px;
+  align-items: center;
+}
+
+.sidebarMore {
+  position: fixed;
+  bottom: 10px;
+}
+
+.row #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.row #title {
+  flex: 70%;
+}
+
+@media (max-width: 1300px) {
+  .sidebar {
+    width: 7%;
+  }
+  .row #title {
+    display: none;
+  }
+  .menuIcon {
+    position: fixed;
+  }
+  .sidebarButton > span {
+    display: none;
+  }
+  .large.logo {
+    display: none;
+  }
+}
+
