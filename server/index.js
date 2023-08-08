@@ -9,7 +9,11 @@ app.get("/", (req, res) => {
   res.json({ git: "good" });
 });
 
-app.post("/api/register", urlencodedParser, (req, res) => {
+
+//routes
+app.use('/register', require('./routes/register'));
+
+/* app.post("/api/register", urlencodedParser, (req, res) => {
   const user = req.body;
   console.log("request recieved");
   // TODO: Check with all userNames in database
@@ -21,7 +25,7 @@ app.post("/api/register", urlencodedParser, (req, res) => {
     res.send("valid username");
   }
 });
-
+ */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("server listening the port http://localhost/" + PORT);
