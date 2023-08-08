@@ -1,17 +1,17 @@
 import React from "react";
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import ExploreIcon from '@mui/icons-material/Explore';
-import SendIcon from '@mui/icons-material/Send';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import ExploreIcon from "@mui/icons-material/Explore";
+import SendIcon from "@mui/icons-material/Send";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import AddCircleOutlineRoundedIcon from "@mui/icons-material/AddCircleOutlineRounded";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
 export const NavbarData = [
   {
     title: "Home",
     icon: <HomeIcon />,
-    link: "/Home",
+    link: "/home",
   },
   {
     title: "Search",

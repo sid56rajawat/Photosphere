@@ -1,8 +1,3 @@
-.demo {
-  width: 100vw;
-  height: 100vh;
-}
-
 .sidebar {
   position: fixed;
   display: flex;
@@ -10,18 +5,28 @@
   z-index: 1;
   height: 100%;
   width: 20%;
+  min-width: 80px;
   border-right: 1px solid lightgray;
+  padding: 10px;
 }
 
 .side {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
-.small, .large {
+.small,
+.large {
   margin-top: 20px;
   padding: 10px;
+}
+.small.logo {
+  flex: 30%;
+  display: hidden;
+}
+.large.logo {
+  flex: 70%;
+  text-align: left;
 }
 
 .sidebarList {
@@ -30,64 +35,63 @@
   width: 100%;
 }
 
-.sidebarList .row {
+.row {
   width: 100%;
   height: 60px;
   list-style: none;
   margin: 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 5px;
 }
 
-.sidebarList .row:hover {
+.row {
+  text-decoration: none;
+  color: black;
+}
+
+.row:visited,
+.row:active {
+  color: black;
+}
+
+#more-button {
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  font-size: 1rem;
+}
+#more-button > svg {
+  flex: 30%;
+}
+#more-button > span {
+  flex: 70%;
+  text-align: left;
+}
+
+#more-button svg:hover {
+  transform: scale(105%);
+}
+
+.row:hover,
+#more-button:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.sidebarList #active {
+.sidebarList .active {
   font-weight: bolder;
 }
 
-.sidebarButton {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: black;
-  background: 0;
-  border: 0;
-  margin: 5px 10px 5px 25px;
-  padding: 10px 15px 10px 21px;
-  border-radius: 8px;
-  width: auto;
-  cursor: pointer;
-}
-
-.sidebarButton:hover {
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.sidebarButton > span {
-  display: block;
-  font-size: 18px;
-  margin-left: 5px;
-  align-items: center;
-}
-
-.sidebarMore {
-  position: fixed;
-  bottom: 10px;
-}
-
-.row #icon {
+.row .icon {
   flex: 30%;
   display: grid;
   place-items: center;
 }
-.row #title {
+.row .title {
   flex: 70%;
 }
 
@@ -95,17 +99,12 @@
   .sidebar {
     width: 7%;
   }
-  .row #title {
+  .row .title,
+  .large.logo,
+  #more-button > span {
     display: none;
   }
-  .menuIcon {
-    position: fixed;
-  }
-  .sidebarButton > span {
-    display: none;
-  }
-  .large.logo {
-    display: none;
+  .row {
+    justify-content: center;
   }
 }
-

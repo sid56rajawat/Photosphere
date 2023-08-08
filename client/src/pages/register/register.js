@@ -32,6 +32,8 @@ export default function Register() {
         let msg = response.data;
         if (msg === "invalid username") {
           document.getElementsByClassName("user")[0].style.display = "inline";
+        } else {
+          window.location.href = "/login";
         }
       })
       .catch((err) => console.log(err));
