@@ -15,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     axios
       .post(
-        "/api/register",
+        "/register",
         {
           fullName,
           email,
@@ -29,12 +29,12 @@ export default function Register() {
         }
       )
       .then((response) => {
-        let msg = response.data;
-        if (msg === "invalid username") {
-          document.getElementsByClassName("user")[0].style.display = "inline";
-        }
+        console.log(response);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log("Error from client side");
+        console.log(err);
+      });
   };
 
   return (
