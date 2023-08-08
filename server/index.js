@@ -11,19 +11,7 @@ app.get("/", (req, res) => {
 
 //routes
 app.use("/register", require("./routes/register"));
-
-// app.post("/api/register", (req, res) => {
-//   const user = req.body;
-//   console.log(user);
-//   // TODO: Check with all userNames in database
-//   if (user.userName === "sid56rajawat") {
-//     res.send("invalid username");
-//   } else {
-//     // store user in Database
-//     // redirect to login page
-//     res.send("valid username");
-//   }
-// });
+app.use("/login", require("./routes/login"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
