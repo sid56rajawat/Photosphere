@@ -29,7 +29,16 @@ export default function Register() {
         }
       )
       .then((response) => {
+        console.log("response recieved");
         console.log(response);
+        let responseMessage = response.data.message;
+        if (responseMessage.includes("Username")) {
+          document.getElementsByClassName("user")[0].style.display = "inline";
+        } else if (responseMessage.includes("Fields")) {
+          alert(responseMessage);
+        } else if (responseMessage.includes("user")) {
+          window.location.href = "/login";
+        }
       })
       .catch((err) => {
         console.log("Error from client side");
