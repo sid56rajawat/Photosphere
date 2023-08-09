@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import Story from "./Story";
 import "./stories.css";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 export default function Stories() {
   const storyBoxRef = useRef(null);
@@ -112,6 +114,10 @@ export default function Stories() {
 
   return (
     <div className="stories">
+      <div>
+        <KeyboardArrowLeftIcon className="scroll-button scroll-button-left"
+        onClick={() => scroll(-200)} />
+      </div>
       <div className="story-box" ref={storyBoxRef}>
         {usersData.map((user) => (
           <Story
@@ -121,19 +127,9 @@ export default function Stories() {
           />
         ))}
       </div>
-      <div className="scroll-button-container">
-        <button
-          className="scroll-button scroll-button-left"
-          onClick={() => scroll(-200)}
-        >
-          ‹
-        </button>
-        <button
-          className="scroll-button scroll-button-right"
-          onClick={() => scroll(200)}
-        >
-          ›
-        </button>
+      <div>     
+      <KeyboardArrowRightIcon className="scroll-button scroll-button-right"
+        onClick={() => scroll(200)}/>
       </div>
     </div>
   );
