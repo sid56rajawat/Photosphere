@@ -1,11 +1,10 @@
 /* Home.css */
 .home {
   display: flex;
-  flex-direction: column; /* Stack the sections vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 18%;
-  position: relative;
+  position: relative; 
 }
 
 .stories {
@@ -18,12 +17,27 @@
   position: relative;
 }
 
+.suggest-box {
+  width: 300px;
+  border: 2px solid black;
+  margin-top: 20px;
+  position: absolute;
+  z-index: 1;
+  height: 400px;
+  right: 0;
+  top: 0;
+}
+
 @media only screen and (max-width: 1300px) {
   .home {
     margin-left: max(80px, 7%);
   }
 
   .home-post {
-    margin-left: 0; /* Reset margin for small screens */
+    margin-left: 0;
+  }
+
+  .suggest-box {
+    margin-top: 10px;
   }
 }

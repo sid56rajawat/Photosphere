@@ -1,0 +1,53 @@
+.suggestion-box-container {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-y: auto;
+  right: 0;
+}  
+
+.suggestion-box-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.suggestion-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: auto;
+  color: #999999;
+}
+
+.suggestion-profiles {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.suggestion-profiles img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-profiles .user-name {
+  font-size: 13px;
+  margin-left: -15px;
+}
+
+.suggestion-profiles .location {
+  font-size: 13px;
+  margin-left: -15px;
+}
+
+.suggestion-profiles .profile-photo {
+    align-items: center;
+    margin-left: 10px;
+}
+
+@media screen {
+    
+}

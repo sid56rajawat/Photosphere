@@ -2,6 +2,7 @@ import React from "react";
 import Post from "../../components/ui/post/Post";
 import Stories from "../../components/ui/Stories/Stories.js";
 import MainLayout from "../../layout/MainLayout";
+import SuggestionBox from "../../components/ui/SuggestBox/SuggestionBox";
 import "./Home.css";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <MainLayout>
       <div className="home">
         <div>
-          <Stories/>
+          <Stories />
         </div>
         <div className="home-post">
           <Post
@@ -39,6 +40,9 @@ export default function Home() {
             likes="1234"
             caption="Tu ladki ke peeche bhagega, ladki paise ke peeche bhagegi; tu paise ke peeche bhagega, ladki tere peeche bhagegi"
           />
+        </div>
+        <div className="suggest-box">
+          <SuggestionBox />
         </div>
       </div>
     </MainLayout>

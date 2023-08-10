@@ -116,7 +116,7 @@ export default function Stories() {
     <div className="stories">
       <div>
         <KeyboardArrowLeftIcon className="scroll-button scroll-button-left"
-        onClick={() => scroll(-200)} />
+        onClick={() => scroll(-380)} />
       </div>
       <div className="story-box" ref={storyBoxRef}>
         {usersData.map((user) => (
@@ -129,8 +129,9 @@ export default function Stories() {
       </div>
       <div>     
       <KeyboardArrowRightIcon className="scroll-button scroll-button-right"
-        onClick={() => scroll(200)}/>
+        onClick={() => scroll(380)}/>
       </div>
     </div>
   );
 }
+ 
