@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <MainLayout>
       <div className="home">
+        <div className="home-browse">
           <Stories />
         <div className="home-post">
           <Post
@@ -38,6 +39,7 @@ export default function Home() {
             likes="1234"
             caption="Tu ladki ke peeche bhagega, ladki paise ke peeche bhagegi; tu paise ke peeche bhagega, ladki tere peeche bhagegi"
           />
+        </div>
         </div>
         <div className="suggest-box">
           <SuggestionBox />
