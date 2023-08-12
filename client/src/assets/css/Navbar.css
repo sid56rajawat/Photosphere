@@ -27,6 +27,7 @@
 .large.logo {
   flex: 70%;
   text-align: left;
+  font-size: 38px;
 }
 
 .sidebarList {

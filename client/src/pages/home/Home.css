@@ -14,6 +14,7 @@
   align-items: center;
   position: relative; 
   flex: 70%;
+  justify-content: space-around;
 }
 
 .home-browse{
@@ -24,6 +25,10 @@
 .stories {
   width: 700px;
   margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-post {
@@ -35,13 +40,13 @@
   margin-top: 30px;
   position: absolute;
   z-index: 1;
-  height: 400px;
+  height: 550px;
   top: 0;
   width: 300px;
   padding: 20px;
   border-radius: 5px;
+  margin-left: 73%;
   overflow-y: auto;
-  right: 0;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -49,11 +54,23 @@
     margin-left: max(80px, 7%);
   }
 
-  .home-post {
-    margin-left: 0;
-  }
-
   .suggest-box {
-    margin-top: 10px;
+    display: none;
   }
 }
+
+
+@media only screen and (max-width: 760px) {
+  .home {
+    flex-direction: column;/*important*/
+    align-items: flex-start;
+    margin-left: 0; 
+  }
+
+  .home-browse{
+    margin-left: 80px;
+  }
+
+  
+}
+
