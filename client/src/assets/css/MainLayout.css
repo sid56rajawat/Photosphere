@@ -1,0 +1,11 @@
+.sidebar + div {
+  width: 80%;
+  margin-left: 20%;
+}
+
+@media (max-width: 1300px) {
+  .sidebar + div {
+    margin-left: max(7%,80px);
+    width: 93%;
+  }
+}
