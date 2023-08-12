@@ -1,4 +1,11 @@
-/* Home.css */
+.Mainlayout{
+  flex-direction: row;
+}
+
+.Mainlayout .Navbar{
+  flex: 30%;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -18,13 +25,16 @@
 }
 
 .suggest-box {
-  width: 300px;
   margin-top: 30px;
   position: absolute;
   z-index: 1;
   height: 400px;
-  right: 0;
   top: 0;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-y: auto;
+  right: 0;
 }
 
 @media only screen and (max-width: 1300px) {

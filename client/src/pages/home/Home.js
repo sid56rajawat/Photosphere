@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <MainLayout>
       <div className="home">
-        <div>
           <Stories />
-        </div>
         <div className="home-post">
           <Post
             postID="1"

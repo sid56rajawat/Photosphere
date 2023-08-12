@@ -1,12 +1,4 @@
-/* SuggestionBox.css */
 
-.suggestion-box-container {
-  width: 300px;
-  padding: 20px;
-  border-radius: 5px;
-  overflow-y: auto;
-  right: 0;
-}
 
 .suggestion-title {
   font-size: 14px;
@@ -21,7 +13,7 @@
   padding: 8px;
 }
 
-.suggestion-box-header .User-Profile-Switch, .suggestion-profiles .Suggestion-Switch {
+.suggestion-box-header .User-Profile-Switch, .suggestion-profiles .Suggestion-follow {
   margin-right: auto;
   margin-left: 40px;
   border: none;

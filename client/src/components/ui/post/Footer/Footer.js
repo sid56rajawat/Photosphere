@@ -5,7 +5,7 @@ import FooterBottom from "./FooterBootom/FooterBottom.js";
 export default function Footer(props) {
   return (
     <div className="footer">
-      <FooterTop profilePhoto={props.profilePhoto} />
+      <FooterTop />
       <FooterBottom
         likes={props.likes}
         username={props.username}
