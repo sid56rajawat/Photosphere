@@ -74,7 +74,7 @@ export default function Login() {
   };
 
   if (checkingToken) {
-    return <div>Checking token...</div>;
+    return <div>Validating Token...</div>;
   }
 
   return (

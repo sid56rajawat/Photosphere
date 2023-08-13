@@ -28,6 +28,7 @@ export default function Home() {
           if (response.data.valid) {
             setCheckingToken(false);
           } else {
+            console.log("token invalid");
             navigate("/login");
           }
         })
@@ -36,12 +37,13 @@ export default function Home() {
           setCheckingToken(false);
         });
     } else {
+      console.log("No token found");
       navigate("/login");
     }
   }, [navigate]);
 
   if (checkingToken) {
-    return <div>Checking token...</div>;
+    return <div>Validating token...</div>;
   }
 
   return (
