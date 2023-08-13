@@ -1,0 +1,6 @@
+.no-of-likes {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}

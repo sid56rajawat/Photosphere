@@ -1,0 +1,55 @@
+.story-box {
+  display: flex;
+  overflow: hidden;
+  padding-top: 20px;
+  min-width: 100px;
+  max-width: max(650px, 93%);
+  margin: 0 auto;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+.story-box:first-child{
+  margin-left: 20px;
+}
+
+.scroll-button {
+  border-radius: 50%;
+  width: 25px; 
+  height: 25px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  margin: 0 10px;
+  background-color: #ffffff; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.scroll-button-left {
+  left: 0;
+}
+
+.scroll-button-right {
+  right: 0;
+}
+
+/* Center the scroll buttons vertically */
+.scroll-button-left,
+.scroll-button-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Space between scroll buttons */
+.scroll-button-left {
+  margin-right: 10px;
+}
+
+.scroll-button-right {
+  margin-left: 10px;
+}

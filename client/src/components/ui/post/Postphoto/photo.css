@@ -1,0 +1,9 @@
+.photo {
+  margin-top: 10px;
+}
+
+.photo img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}

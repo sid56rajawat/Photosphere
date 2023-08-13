@@ -10,3 +10,12 @@
   font-size: 30px;
   margin: 5px 0px;
 }
+
+.page {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+
+}

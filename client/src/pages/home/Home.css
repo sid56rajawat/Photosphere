@@ -1,0 +1,76 @@
+.Mainlayout{
+  display: flex;
+  flex-direction: row;
+}
+
+.Mainlayout .Navbar{
+  flex: 30%;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  flex: 70%;
+  justify-content: space-around;
+}
+
+.home-browse{
+  display: flex;
+  flex-direction: column;
+}
+
+.stories {
+  width: 700px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-post {
+  margin-left: 20px;
+  position: relative;
+}
+
+.suggest-box {
+  margin-top: 30px;
+  position: absolute;
+  z-index: 1;
+  height: 550px;
+  top: 0;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 73%;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 1300px) {
+  .home {
+    margin-left: max(80px, 7%);
+  }
+
+  .suggest-box {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 760px) {
+  .home {
+    flex-direction: column;/*important*/
+    align-items: flex-start;
+    margin-left: 0; 
+  }
+
+  .home-browse{
+    margin-left: 80px;
+  }
+
+  
+}
+

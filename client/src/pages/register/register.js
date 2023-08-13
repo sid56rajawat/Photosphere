@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [fullName, setFullName] = useState();
   const [userName, setUserName] = useState();
   const [email, setEmail] = useState();
@@ -37,7 +38,7 @@ export default function Register() {
         } else if (responseMessage.includes("Fields")) {
           alert(responseMessage);
         } else if (responseMessage.includes("user")) {
-          window.location.href = "/login";
+          navigate("/login");
         }
       })
       .catch((err) => {

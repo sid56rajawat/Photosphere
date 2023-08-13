@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Logo from "./components/ui/Logo";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Home from "./pages/home/Home";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <div>Home</div>,
+    element: <Home />,
   },
 ]);
 

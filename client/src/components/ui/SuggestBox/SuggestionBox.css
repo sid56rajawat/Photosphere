@@ -1,0 +1,73 @@
+
+
+.suggestion-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #999999;
+}
+
+.suggestion-box-header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.suggestion-box-header .User-Profile-Switch, .suggestion-profiles .Suggestion-follow {
+  margin-right: auto;
+  margin-left: 40px;
+  border: none;
+  background: none;
+  color: #0095F6;
+  font-weight: 550;
+}
+
+.suggestion-profiles .suggestion {
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-profiles .Suggestion-Switch {
+  border: none;
+  background: none;
+  color: #0095F6;
+  font-weight: 550;
+}
+
+.suggestion-profiles .header,
+.suggestion-box-header {
+  padding: 8px;
+}
+
+.suggestion-profiles img,
+.suggestion-box-header img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-profiles .user-name,
+.suggestion-box-header .user-name {
+  font-size: 13px;
+  margin-left: -15px;
+}
+
+.suggestion-profiles .location,
+.suggestion-box-header .location {
+  font-size: 13px;
+  margin-left: -15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 75px;
+}
+
+.suggestion-profiles .profile-photo,
+.suggestion-box-header .profile-photo {
+  align-items: center;
+  margin-left: 10px;
+}
+
+
