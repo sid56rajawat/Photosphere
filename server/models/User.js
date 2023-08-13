@@ -25,11 +25,22 @@ const userSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    profile_status: {
-        type: String,
-        default: 'private' 
+    isprivate: {
+        type: Boolean,
+        default: true
     },
-    refreshToken: String
+    posts: {
+        type: Array,
+        default: []
+    },
+    saved: {
+        type: Array,
+        default: []
+    },
+    tagged_posts: {
+        type: Array,
+        default: []
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);
