@@ -21,6 +21,14 @@ const userSchema = new Schema({
     profilepicture: {
         type: String
     },
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    profile_status: {
+        type: String,
+        default: 'private' 
+    },
     refreshToken: String
 });
 
