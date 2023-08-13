@@ -1,13 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [checkingToken, setCheckingToken] = useState(true);
+
+  useEffect(() => {
+    // Check if the user already has a valid token
+    const accessToken = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("accessToken="));
+
+    if (accessToken) {
+      // Validate token with server
+      axios
+        .get("/validateToken", {
+          headers: { Authorization: `Bearer ${accessToken.split("=")[1]}` },
+        })
+        .then((response) => {
+          if (response.data.valid) {
+            navigate("/home"); // Redirect to home page
+          } else {
+            setCheckingToken(false);
+          }
+        })
+        .catch((error) => {
+          console.error("Token validation error:", error);
+          setCheckingToken(false);
+        });
+    } else {
+      setCheckingToken(false);
+    }
+  }, [navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,9 +56,13 @@ export default function Login() {
       )
       .then((response) => {
         console.log(response);
+        const accessToken = response.data.accessToken;
+        if (accessToken) {
+          document.cookie = `accessToken=${accessToken}; path=/`;
+        }
         const responseMessage = response.data.message;
         if (responseMessage.includes("Correct")) {
-          // window.location.href = "/home";
+          navigate("/home");
         } else {
           alert(responseMessage);
         }
@@ -38,6 +72,11 @@ export default function Login() {
         console.log(err);
       });
   };
+
+  if (checkingToken) {
+    return <div>Checking token...</div>;
+  }
+
   return (
     <AuthenticationLayout>
       <div className="container">
