@@ -3,6 +3,9 @@ const User = require("./models/User");
 const jwt = require("jsonwebtoken");
 
 const app = express();
+const connectToMongoDBAtlas = require('./config/dbConn');
+const atlasConnectionString = "mongodb+srv://rohitsaini3523:testing123@cluster0.enqxn8v.mongodb.net/Photosphere";
+connectToMongoDBAtlas(atlasConnectionString);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
