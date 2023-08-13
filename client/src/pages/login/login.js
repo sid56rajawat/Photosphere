@@ -58,7 +58,7 @@ export default function Login() {
         console.log(response);
         const accessToken = response.data.accessToken;
         if (accessToken) {
-          document.cookie = `accessToken=${accessToken}; path=/login`;
+          document.cookie = `accessToken=${accessToken}; path=/`;
         }
         const responseMessage = response.data.message;
         if (responseMessage.includes("Correct")) {
