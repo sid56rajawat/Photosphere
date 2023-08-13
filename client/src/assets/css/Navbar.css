@@ -22,11 +22,11 @@
 }
 .small.logo {
   flex: 30%;
-  display: hidden;
+  display: none;
 }
 .large.logo {
   flex: 70%;
-  text-align: left;
+  text-align: center;
 }
 
 .sidebarList {
@@ -50,11 +50,6 @@
 
 .row {
   text-decoration: none;
-  color: black;
-}
-
-.row:visited,
-.row:active {
   color: black;
 }
 
@@ -99,6 +94,9 @@
   .sidebar {
     width: 7%;
   }
+  .small.logo {
+    display: inline-block;
+  }
   .row .title,
   .large.logo,
   #more-button > span {
@@ -106,5 +104,8 @@
   }
   .row {
     justify-content: center;
+  }
+  .row > .icon {
+    margin: auto;
   }
 }
