@@ -28,7 +28,7 @@ export default function Login() {
         console.log(response);
         const responseMessage = response.data.message;
         if (responseMessage.includes("Correct")) {
-          window.location.href = "/home";
+          // window.location.href = "/home";
         } else {
           alert(responseMessage);
         }
