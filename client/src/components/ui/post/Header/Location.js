@@ -1,11 +1,10 @@
 import React from 'react';
 import "./location.css"
 
-export default function Location() {
+export default function Location(props) {
   return (
     <div className='location'>
-        <p>FarmHouse, Bandra</p>
+      <p>{props.location}</p>
     </div>
   );
 }
-
