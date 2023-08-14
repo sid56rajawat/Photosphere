@@ -1,10 +1,8 @@
 .gallery-item {
   position: relative;
-  width: 28%;
-  padding-bottom: 28%;
-  overflow: hidden;
-  margin: 0;
-  border: 1px solid #dbdbdb;
+  width: 100%;
+  padding-bottom: 90%;
+  overflow: hidden; 
 }
 
 .gallery-item img {

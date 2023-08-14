@@ -1,12 +1,16 @@
-/* explore.css */
-.explore-window {
-    padding: 20px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; 
-  }
-  
-  
+.GridPost{
+  position: relative;
+}
+
+.explore-window{
+  margin-left: 20%;
+  margin-right: 2%;
+  padding-top: 7vh;
+  overflow: hidden;
+}
+
+.grid-container{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
