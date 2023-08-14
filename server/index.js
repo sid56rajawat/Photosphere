@@ -1,26 +1,22 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 
 const app = express();
+const connectToMongoDBAtlas = require("./config/dbConn");
+const atlasConnectionString =
+  "mongodb+srv://rohitsaini3523:testing123@cluster0.enqxn8v.mongodb.net/Photosphere";
+connectToMongoDBAtlas(atlasConnectionString);
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({ git: "good" });
 });
 
-app.post("/api/register", urlencodedParser, (req, res) => {
-  const user = req.body;
-  console.log("request recieved");
-  // TODO: Check with all userNames in database
-  if (user.userName === "sid56rajawat") {
-    res.send("invalid username");
-  } else {
-    // store user in Database
-    // redirect to login page
-    res.send("valid username");
-  }
-});
+//routes
+app.use("/register", require("./routes/register"));
+app.use("/login", require("./routes/login"));
+app.use("/validateToken", require("./routes/validateToken"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

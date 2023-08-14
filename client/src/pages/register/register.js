@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [fullName, setFullName] = useState();
   const [userName, setUserName] = useState();
   const [email, setEmail] = useState();
@@ -15,7 +16,7 @@ export default function Register() {
     e.preventDefault();
     axios
       .post(
-        "/api/register",
+        "/register",
         {
           fullName,
           email,
@@ -29,14 +30,21 @@ export default function Register() {
         }
       )
       .then((response) => {
-        let msg = response.data;
-        if (msg === "invalid username") {
+        console.log("response recieved");
+        console.log(response);
+        let responseMessage = response.data.message;
+        if (responseMessage.includes("Username")) {
           document.getElementsByClassName("user")[0].style.display = "inline";
-        } else {
-          window.location.href = "/login";
+        } else if (responseMessage.includes("Fields")) {
+          alert(responseMessage);
+        } else if (responseMessage.includes("user")) {
+          navigate("/login");
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log("Error from client side");
+        console.log(err);
+      });
   };
 
   return (
