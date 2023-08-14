@@ -4,7 +4,7 @@ import './UserName.css';
 export default function UserName() {
   return (
     <div className='user-name'>
-        <h3>Salman Khan</h3>
+        <h3>bhoi.sallu</h3>
     </div>
   );
 }
