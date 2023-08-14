@@ -13,7 +13,10 @@ export default function GridPost({ imageSrc, likes, comments, postID }) {
             <FavoriteIcon className="fas fa-heart" aria-hidden="true" /> {likes}
           </li>
           <li className="gallery-item-comments">
-            <ModeCommentRoundedIcon className="fas fa-heart" aria-hidden="true" />{" "}
+            <ModeCommentRoundedIcon
+              className="fas fa-heart"
+              aria-hidden="true"
+            />{" "}
             {comments}
           </li>
         </ul>

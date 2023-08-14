@@ -1,0 +1,36 @@
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+}
+
+.profile-photo-container {
+    flex-grow: 1;
+    text-align: center;
+}
+.profile-photo {
+    height: 150px;
+    width: 150px;
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+    flex-grow: 3;
+}
+
+.user-content {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid blueviolet;
+    flex-grow: 1;
+}
+.stats {
+    border: 1px solid red;
+    flex-grow: 1;
+}
+.bio {
+    border: 1px solid green;
+    flex-grow: 2;
+}

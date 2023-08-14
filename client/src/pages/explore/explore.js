@@ -1,5 +1,5 @@
 import React from "react";
-import GridPost from "./gridPost";
+import GridPost from "./GridPost";
 import "./explore.css"
 import MainLayout from "../../layout/MainLayout";
 
