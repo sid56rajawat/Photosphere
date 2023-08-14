@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../post/Header/Header";
-import "./SuggestionBox.css"; 
+import "./SuggestionBox.css";
 import Suggestion from "./Suggestion";
 
 export default function SuggestionBox() {
@@ -10,30 +10,35 @@ export default function SuggestionBox() {
       location: "Mumbai",
       profilePicture:
         "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTEgteLd0PoridLzOzgAKcG4T8Gkh3O_fy6PsxY_YXWOa6IN-Mjligs_gPvCVGo8tlVMZKNlsf68MQa5dQ",
+      key: 1,
     },
     {
       username: "ZarinKhan",
       location: "Mumbai",
       profilePicture:
         "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTEgteLd0PoridLzOzgAKcG4T8Gkh3O_fy6PsxY_YXWOa6IN-Mjligs_gPvCVGo8tlVMZKNlsf68MQa5dQ",
+      key: 2,
     },
     {
       username: "ZarinKhan",
       location: "Mumbai",
       profilePicture:
         "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTEgteLd0PoridLzOzgAKcG4T8Gkh3O_fy6PsxY_YXWOa6IN-Mjligs_gPvCVGo8tlVMZKNlsf68MQa5dQ",
+      key: 3,
     },
     {
       username: "ZarinKhan",
       location: "Mumbai",
       profilePicture:
         "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTEgteLd0PoridLzOzgAKcG4T8Gkh3O_fy6PsxY_YXWOa6IN-Mjligs_gPvCVGo8tlVMZKNlsf68MQa5dQ",
+      key: 4,
     },
     {
       username: "ZarinKhan",
       location: "Mumbai",
       profilePicture:
         "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTEgteLd0PoridLzOzgAKcG4T8Gkh3O_fy6PsxY_YXWOa6IN-Mjligs_gPvCVGo8tlVMZKNlsf68MQa5dQ",
+      key: 5,
     },
   ];
 
@@ -49,15 +54,16 @@ export default function SuggestionBox() {
         />
         <button className="User-Profile-Switch">Switch</button>
       </div>
-        <div className="suggestion-title">Suggested For You</div>
+      <div className="suggestion-title">Suggested For You</div>
       <div className="suggestion-profiles">
-      {usersData.map((user) => (
+        {usersData.map((user) => (
           <Suggestion
+            key={user.key}
             username={user.username}
             location={user.location}
             profilePicture={user.profilePicture}
           />
-        ))}  
+        ))}
       </div>
     </div>
   );

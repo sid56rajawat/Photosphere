@@ -22,7 +22,9 @@ const handleLogin = async (req, res) => {
 
   const validPassword = await bcrypt.compare(password, validUser.password);
   if (validPassword) {
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: "30m",
+    });
     return res.json({ message: "Correct Password", accessToken: accessToken });
   } else {
     return res.json({ message: "Enter valid password" });
