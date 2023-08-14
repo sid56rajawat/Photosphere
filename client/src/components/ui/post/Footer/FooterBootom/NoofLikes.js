@@ -1,10 +1,10 @@
 import React from "react";
 import "./noOflikes.css"
 
-export default function NoOfLikes(){
-    return(
+export default function NoOfLikes(props) {
+  return (
     <div className="no-of-likes">
-        1234 Likes
+      {props.likes} Likes
     </div>
-    );
+  );
 }

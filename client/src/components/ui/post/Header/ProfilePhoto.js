@@ -1,11 +1,10 @@
 import React from 'react';
 import './ProfilePhoto.css';
 
-export default function ProfilePhoto() {
+export default function ProfilePhoto(props) {
   return (
     <div className='profile-photo'>
-        <img src="https://static.sacnilk.com/news/9656.jpg" alt="Profile"/>
+        <img src={props.profilePhoto} alt="Profile"/>
     </div>
   );
 }
-
