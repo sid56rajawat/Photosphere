@@ -1,0 +1,32 @@
+.gallery-navigation-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: -7vh;
+  border-top: 1px solid lightgrey;
+}
+.gallery-posts,
+.gallery-saved,
+.gallery-tagged {
+  margin-right: 40px;
+}
+.gallery-button {
+    display: flex;
+    flex-direction: row;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  align-items: center;
+}
+.gallery-button-div {
+  align-items: center;
+  margin: 5px 0;
+}
+.gallery-button-name {
+    color: lightslategrey;
+    font-size: 11px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}

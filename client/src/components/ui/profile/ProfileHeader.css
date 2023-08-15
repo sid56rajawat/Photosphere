@@ -1,7 +1,8 @@
 .profile-header {
     display: flex;
     flex-direction: row;
-    border: 1px solid red;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .profile-photo-container {
@@ -11,26 +12,47 @@
 .profile-photo {
     height: 150px;
     width: 150px;
+    border: 3px solid purple;
 }
 
 .profile-information {
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
     flex-grow: 3;
 }
 
 .user-content {
     display: flex;
     flex-direction: row;
-    border: 1px solid blueviolet;
     flex-grow: 1;
+    align-items: center;
+}
+.username{
+    margin-right: 30px;
+} 
+.edit-profile {
+    margin-right: 10px;
+}
+.edit-profile-button {
+    padding: 5px 20px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.settings-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 .stats {
-    border: 1px solid red;
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
 }
 .bio {
-    border: 1px solid green;
     flex-grow: 2;
 }

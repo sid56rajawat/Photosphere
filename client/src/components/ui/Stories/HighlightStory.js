@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Story.css"
+import "./HighlightStory.css"
 
-export default function HighlightStory({ name, profilePicture, storyImage }) {
+export default function HighlightStory({ username, profilePicture, storyImage }) {
   return (
-    <div className="story">
+    <div className="highlight">
       <img src={profilePicture} />
-      <p>{name}</p>
+      <p>{username}</p>
     </div>
   );
 }

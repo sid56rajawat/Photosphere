@@ -1,8 +1,10 @@
 import React from 'react'
 import ProfilePhoto from '../post/Header/ProfilePhoto'
 import UserName from '../post/Header/UserName'
+import Bio from './Bio';
 import './ProfileHeader.css'
-
+import Stats from './Stats';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 
 export default function ProfileHeader(props) {
@@ -19,17 +21,20 @@ export default function ProfileHeader(props) {
                     <UserName username={props.username}/>
                 </div>
                 <div className="edit-profile">
-                edit-profile
+                    <button className='edit-profile-button'>Edit Profile</button>
+                </div> 
+                <div className="edit-profile">
+                    <button className='edit-profile-button'>View Archive</button>
                 </div> 
                 <div className="settings">
-                settings
+                    <button className='settings-button'><SettingsIcon/></button>
                 </div>
             </div>
             <div className="stats">
-                stats
+                <Stats/>
             </div>
             <div className="bio">
-                bio
+                <Bio/>
             </div>
         </section>
     </div>

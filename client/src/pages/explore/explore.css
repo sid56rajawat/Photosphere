@@ -3,8 +3,7 @@
 }
 
 .explore-window{
-  margin-left: 20%;
-  margin-right: 2%;
+  margin: 2px 10px;
   padding-top: 7vh;
   overflow: hidden;
 }

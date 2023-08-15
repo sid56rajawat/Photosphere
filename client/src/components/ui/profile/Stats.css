@@ -1,0 +1,21 @@
+.stats-component {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.stats-posts, .stats-followers, .stats-following {
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.stats-link {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.stats-value {
+    font-weight: bold;
+}

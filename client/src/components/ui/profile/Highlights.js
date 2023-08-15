@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Story from "../Stories/Story.js";
+import HighlightStory from "../Stories/HighlightStory.js";
 import "../Stories/stories.css";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -43,12 +43,12 @@ export default function Highlights() {
     return (
       <div className="stories">
         <div>
-          <KeyboardArrowLeftIcon className="scroll-button scroll-button-left"
-          onClick={() => scroll(-380)} />
+          {/* <KeyboardArrowLeftIcon className="scroll-button scroll-button-left"
+          onClick={() => scroll(-380)} /> */}
         </div>
         <div className="story-box" ref={storyBoxRef}>
           {usersData.map((user) => (
-            <Story
+            <HighlightStory
               key={user.id}
               username={user.username}
               profilePicture={user.profilePicture}
@@ -56,8 +56,8 @@ export default function Highlights() {
           ))}
         </div>
         <div>     
-        <KeyboardArrowRightIcon className="scroll-button scroll-button-right"
-          onClick={() => scroll(380)}/>
+        {/* <KeyboardArrowRightIcon className="scroll-button scroll-button-right"
+          onClick={() => scroll(380)}/> */}
         </div>
       </div>
     );

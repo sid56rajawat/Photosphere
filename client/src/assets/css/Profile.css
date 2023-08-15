@@ -1,5 +1,4 @@
 .container, .page-layout {
-  border: 1px solid black;
   margin: 0;
   padding: 0;
 }
@@ -7,4 +6,5 @@
 .profile-container {
   width: 75%;
   margin: 0 auto;
+  font-family: sans-serif;
 }

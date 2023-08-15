@@ -1,0 +1,9 @@
+.bio-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 5px;
+}
+.real-name-span {
+    font-weight: bold;
+}
