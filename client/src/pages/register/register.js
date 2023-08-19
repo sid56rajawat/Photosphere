@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
+import styles from "../../assets/css/auth.module.css"
 
 export default function Register() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Register() {
   const [password, setPassword] = useState();
 
   const handleSubmit = (e) => {
-    document.getElementsByClassName("user")[0].style.display = "none";
+    document.getElementsByClassName(`${styles.user}`)[0].style.display = "none";
     e.preventDefault();
     axios
       .post(
@@ -34,7 +35,7 @@ export default function Register() {
         console.log(response);
         let responseMessage = response.data.message;
         if (responseMessage.includes("Username")) {
-          document.getElementsByClassName("user")[0].style.display = "inline";
+          document.getElementsByClassName(`${styles.user}`)[0].style.display = "inline";
         } else if (responseMessage.includes("Fields")) {
           alert(responseMessage);
         } else if (responseMessage.includes("user")) {
@@ -49,11 +50,11 @@ export default function Register() {
 
   return (
     <AuthenticationLayout>
-      <div className="container">
+      <div className={styles["container"]}>
         <form onSubmit={handleSubmit}>
           <Logo name="Photosphere" />
-          <div className="content">
-            <div className="input-box">
+          <div className={styles["content"]}>
+            <div className={styles["input-box"]}>
               <input
                 placeholder="Email address"
                 type="email"
@@ -62,7 +63,7 @@ export default function Register() {
                 required
               />
             </div>
-            <div className="input-box">
+            <div className={styles["input-box"]}>
               <input
                 placeholder="Full Name"
                 type="text"
@@ -71,8 +72,8 @@ export default function Register() {
                 required
               />
             </div>
-            <p className="invalid user">Invalid username</p>
-            <div className="input-box">
+            <p className={`${styles.invalid} ${styles.user}`}>Invalid username</p>
+            <div className={styles["input-box"]}>
               <input
                 placeholder="Username"
                 type="text"
@@ -81,7 +82,7 @@ export default function Register() {
                 required
               />
             </div>
-            <div className="input-box">
+            <div className={styles["input-box"]}>
               <input
                 placeholder="Password"
                 type="password"
@@ -93,16 +94,16 @@ export default function Register() {
               />
             </div>
           </div>
-          <div className="alert">
+          <div className={styles["alert"]}>
             <p>
               By signing up, you agree to our <a href="#">Terms</a>,{" "}
               <a href="#">Privacy Policy</a> and <a href="#"> Cookies Policy</a>
             </p>
           </div>
-          <div className="button-container">
+          <div className={styles["button-container"]}>
             <button type="submit">Sign Up</button>
           </div>
-          <div className="alert">
+          <div className={styles["alert"]}>
             <p>
               Already Have an account? <Link to="/login">Log in</Link>
             </p>

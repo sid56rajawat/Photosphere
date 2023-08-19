@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
+import styles from "../../assets/css/auth.module.css"
 
 export default function Login() {
   const navigate = useNavigate();
@@ -79,11 +80,11 @@ export default function Login() {
 
   return (
     <AuthenticationLayout>
-      <div className="container">
+      <div className={styles.container}>
         <form onSubmit={handleSubmit}>
           <Logo name="Photosphere" />
-          <div className="content">
-            <div className="input-box">
+          <div className={styles.content}>
+            <div className={styles['input-box']}>
               <input
                 placeholder="Username"
                 type="text"
@@ -92,7 +93,7 @@ export default function Login() {
                 required
               />
             </div>
-            <div className="input-box">
+            <div className={styles['input-box']}>
               <input
                 placeholder="Password"
                 type="password"
@@ -102,10 +103,10 @@ export default function Login() {
               />
             </div>
           </div>
-          <div className="button-container">
+          <div className={styles['button-container']}>
             <button type="submit">Login</button>
           </div>
-          <div className="alert">
+          <div className={styles.alert}>
             <p>
               Don't have an account? <Link to="/register">Register</Link>
             </p>
