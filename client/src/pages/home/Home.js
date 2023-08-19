@@ -34,7 +34,7 @@ export default function Home() {
         })
         .catch((error) => {
           console.error("Token validation error:", error);
-          setCheckingToken(false);
+          navigate("/login");
         });
     } else {
       console.log("No token found");
