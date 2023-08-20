@@ -55,7 +55,6 @@ export default function Login() {
         }
       )
       .then((response) => {
-        console.log(response);
         const accessToken = response.data.accessToken;
         if (accessToken) {
           document.cookie = `accessToken=${accessToken}; path=/`;
