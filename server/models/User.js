@@ -21,7 +21,26 @@ const userSchema = new Schema({
     profilepicture: {
         type: String
     },
-    refreshToken: String
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    isprivate: {
+        type: Boolean,
+        default: true
+    },
+    posts: {
+        type: Array,
+        default: []
+    },
+    saved: {
+        type: Array,
+        default: []
+    },
+    tagged_posts: {
+        type: Array,
+        default: []
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);
