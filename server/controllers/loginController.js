@@ -22,10 +22,13 @@ const handleLogin = async (req, res) => {
 
   const validPassword = await bcrypt.compare(password, validUser.password);
   if (validPassword) {
+    const cookieExpiration = Date.now() + (30 * 60) * 1000;
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "30m",
+      expiresIn: "30m"
     });
-    return res.json({ message: "Correct Password", accessToken: accessToken });
+    // Express sessions
+    res.cookie('accessToken', accessToken, { expires: new Date(cookieExpiration), httpOnly: true, sameSite: "strict"});
+    return res.json({ message: "Correct Password" });
   } else {
     return res.json({ message: "Enter valid password" });
   }

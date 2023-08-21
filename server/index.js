@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const connectToMongoDBAtlas = require("./config/dbConn");
@@ -8,15 +9,17 @@ connectToMongoDBAtlas(atlasConnectionString);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.json({ git: "good" });
 });
 
 //routes
-app.use("/register", require("./routes/register"));
-app.use("/login", require("./routes/login"));
-app.use("/validateToken", require("./routes/validateToken"));
+app.use("/register", require("./routes/api/register"));
+app.use("/login", require("./routes/api/login"));
+app.use("/validateToken", require("./middleware/validateToken"));
+// TODO: router
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
