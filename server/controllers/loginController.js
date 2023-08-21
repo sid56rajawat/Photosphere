@@ -26,7 +26,10 @@ const handleLogin = async (req, res) => {
     const accessToken = jwt.sign({username: validUser['username'], password: validUser['password']}, process.env.ACCESS_TOKEN_SECRET, {
       expiresIn: "30m",
     });
-    return res.json({ message: "Correct Password", accessToken: accessToken });
+    const cookieExpiration = Date.now() + (30 * 60) * 1000;
+    // Express sessions
+    res.cookie('accessToken', accessToken, { expires: new Date(cookieExpiration), httpOnly: true, sameSite: "strict"});
+    return res.json({ message: "Correct Password" });
   } else {
     return res.json({ message: "Enter valid password" });
   }

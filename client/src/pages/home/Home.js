@@ -14,32 +14,22 @@ export default function Home() {
 
   useEffect(() => {
     // Check if the user already has a valid token
-    const accessToken = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("accessToken="));
-
-    if (accessToken) {
-      // Validate token with server
-      axios
-        .get("/validateToken", {
-          headers: { Authorization: `Bearer ${accessToken.split("=")[1]}` },
-        })
-        .then((response) => {
-          if (response.data.valid) {
-            setCheckingToken(false);
-          } else {
-            console.log("token invalid");
-            navigate("/login");
-          }
-        })
-        .catch((error) => {
-          console.error("Token validation error:", error);
+    // Validate token with server
+    axios.defaults.withCredentials = true;
+    axios.get("/validateToken")
+      .then((response) => {
+        if (response.data.valid) {
+          setCheckingToken(false);
+        } else {
+          console.log("token invalid");
           navigate("/login");
-        });
-    } else {
-      console.log("No token found");
-      navigate("/login");
-    }
+        }
+      })
+      .catch((error) => {
+        console.error("Token validation error:", error);
+        navigate("/login");
+      });
+
   }, [navigate]);
 
   if (checkingToken) {

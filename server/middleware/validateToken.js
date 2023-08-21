@@ -5,7 +5,11 @@ const jwt = require("jsonwebtoken");
 
 router.get("/", async (req, res) => {
   try {
-    const token = req.header("Authorization").replace("Bearer ", "");
+    // console.log(req);
+    const token = req.cookies['accessToken'];
+    if(!token){
+      res.json({valid: false});
+    }
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findOne({ username: decodedToken.username, password: decodedToken.password});
     const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
