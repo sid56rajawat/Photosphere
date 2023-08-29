@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
     // console.log(req);
     const token = req.cookies['accessToken'];
     if(!token){
-      res.json({valid: false});
+      return res.json({valid: false});
     }
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findOne({ username: decodedToken.username, password: decodedToken.password});
