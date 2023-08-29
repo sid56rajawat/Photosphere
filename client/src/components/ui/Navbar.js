@@ -14,9 +14,9 @@ function Navbar() {
         <Logo className="large logo" name="Photosphere" />
       </div>
       <ul className="sidebarList">
-        {NavbarData.map((val) => {
+        {NavbarData.map((val, key) => {
           return (
-            <li>
+            <li key={key}>
               <Link to={val.link} className="row">
                 <div className="icon">{val.icon}</div>
                 <div className="title">{val.title}</div>
