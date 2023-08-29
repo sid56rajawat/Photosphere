@@ -4,9 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./assets/css/index.css";
 import reportWebVitals from "./reportWebVitals";
 import Logo from "./components/ui/Logo";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
+import Login from "./pages/login/login";
+import Register from "./pages/register/register";
 import Home from "./pages/home/Home";
+import Explore from "./pages/explore/explore";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/explore",
+    element: <Explore />,
   },
 ]);
 
