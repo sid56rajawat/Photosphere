@@ -76,7 +76,13 @@ describe("Login Controller Functionality", () => {
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(200);
       expect(response.body.message).toBe("Correct Password");
-      console.log(response);
+    });
+
+    it("Return access token for valid user", async () => {
+      const response = await request(baseURL).post("/login").send(body);
+      expect(response.header["set-cookie"][0].startsWith("accessToken=")).toBe(
+        true
+      );
     });
   });
 });
