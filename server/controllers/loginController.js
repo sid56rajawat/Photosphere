@@ -9,29 +9,38 @@ const handleLogin = async (req, res) => {
   const user = { userName, password };
 
   if (!userName || !password)
-    return res.json({ message: "Both Username and Password are required." });
+    return res
+      .status(400)
+      .json({ message: "Both Username and Password are required." });
 
   // check for user in db
   const validUser = await User.findOne({
     username: userName,
   }).exec();
 
-
   if (!validUser) {
-    return res.json({ message: "Enter valid username" });
+    return res.status(401).json({ message: "Enter valid username" });
   }
 
   const isValidPassword = await bcrypt.compare(password, validUser.password);
   if (isValidPassword) {
-    const accessToken = jwt.sign({username: validUser['username'], password: validUser['password']}, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "30m",
-    });
-    const cookieExpiration = Date.now() + (30 * 60) * 1000;
+    const accessToken = jwt.sign(
+      { username: validUser["username"], password: validUser["password"] },
+      process.env.ACCESS_TOKEN_SECRET,
+      {
+        expiresIn: "30m",
+      }
+    );
+    const cookieExpiration = Date.now() + 30 * 60 * 1000;
     // Express sessions
-    res.cookie('accessToken', accessToken, { expires: new Date(cookieExpiration), httpOnly: true, sameSite: "strict"});
+    res.cookie("accessToken", accessToken, {
+      expires: new Date(cookieExpiration),
+      httpOnly: true,
+      sameSite: "strict",
+    });
     return res.json({ message: "Correct Password" });
   } else {
-    return res.json({ message: "Enter valid password" });
+    return res.status(401).json({ message: "Enter valid password" });
   }
 };
 
