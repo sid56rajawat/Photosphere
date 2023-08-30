@@ -15,7 +15,8 @@ export default function Login() {
     // Check if the user already has a valid token
     // Validate token with server
     axios.defaults.withCredentials = true;
-    axios.get("/validateToken")
+    axios
+      .get("/validateToken")
       .then((response) => {
         if (response.data.valid) {
           navigate("/home");
@@ -26,7 +27,6 @@ export default function Login() {
       .catch((error) => {
         setCheckingToken(false);
       });
-
   }, [navigate]);
 
   const handleSubmit = (e) => {
@@ -45,7 +45,6 @@ export default function Login() {
         }
       )
       .then((response) => {
-        console.log(response);
         const responseMessage = response.data.message;
         if (responseMessage.includes("Correct")) {
           navigate("/home");

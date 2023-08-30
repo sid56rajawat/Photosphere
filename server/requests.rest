@@ -1,9 +1,9 @@
-POST  http://localhost:5000/login
+POST  http://127.0.0.1:5000/login HTTP/1.1
 Content-Type: 'application/json'
 
 {
-    "userName" : "rohit",
-    "password" : "Rohit@123"
+    "userName" : "bhoi.sallu",
+    "password" : "Pass@123"
 }
 
 DELETE http://127.0.0.1:5000/register/test

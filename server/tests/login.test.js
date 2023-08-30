@@ -23,6 +23,7 @@ describe("Login Controller Functionality", () => {
       userName: "",
       password: "",
     };
+
     it("both empty should return 400", async () => {
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(400);
@@ -30,17 +31,19 @@ describe("Login Controller Functionality", () => {
         "Both Username and Password are required."
       );
     });
-    body.userName = "no user";
+
     it("empty password should return 400", async () => {
+      body.userName = "no user";
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(400);
       expect(response.body.message).toBe(
         "Both Username and Password are required."
       );
     });
-    body.userName = "";
-    body.password = "pass";
+
     it("empty username should return 400", async () => {
+      body.userName = "";
+      body.password = "pass";
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(400);
       expect(response.body.message).toBe(
@@ -54,12 +57,13 @@ describe("Login Controller Functionality", () => {
       userName: "invalid",
       password: "invalid",
     };
-    it("Incorrect username returns 401", async () => {
 
+    it("Incorrect username returns 401", async () => {
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(401);
       expect(response.body.message).toBe("Enter valid username");
     });
+
     it("Incorrect password returns 401", async () => {
       body.userName = "test";
       const response = await request(baseURL).post("/login").send(body);
@@ -72,7 +76,7 @@ describe("Login Controller Functionality", () => {
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(200);
       expect(response.body.message).toBe("Correct Password");
+      console.log(response);
     });
-
   });
 });
