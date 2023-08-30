@@ -38,7 +38,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true,
       sameSite: "strict",
     });
-    return res.json({ message: "Correct Password" });
+    return res.status(200).json({ message: "Correct Password" });
   } else {
     return res.status(401).json({ message: "Enter valid password" });
   }

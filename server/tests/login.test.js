@@ -1,3 +1,4 @@
+"use strict";
 const baseURL = "127.0.0.1:5000";
 const request = require("supertest");
 
@@ -54,17 +55,24 @@ describe("Login Controller Functionality", () => {
       password: "invalid",
     };
     it("Incorrect username returns 401", async () => {
+
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(401);
       expect(response.body.message).toBe("Enter valid username");
     });
-
-    body.userName = "test";
-    body.password = "Pass@123";
     it("Incorrect password returns 401", async () => {
+      body.userName = "test";
       const response = await request(baseURL).post("/login").send(body);
       expect(response.statusCode).toBe(401);
       expect(response.body.message).toBe("Enter valid password");
     });
+
+    it("Both correct should return 200", async () => {
+      body.password = "test";
+      const response = await request(baseURL).post("/login").send(body);
+      expect(response.statusCode).toBe(200);
+      expect(response.body.message).toBe("Correct Password");
+    });
+
   });
 });
