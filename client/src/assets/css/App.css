@@ -1,3 +1,20 @@
-.greeting {
-  color: turquoise;
+@font-face {
+  font-family: dancingScript;
+  src: url("../fonts/DancingScript-SemiBold.ttf");
+}
+
+.logo {
+  /* border: 1px solid; */
+  text-align: center;
+  font-family: dancingScript, cursive;
+  font-size: 30px;
+  margin: 5px 0px;
+}
+
+.page {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
 }

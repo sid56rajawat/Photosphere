@@ -9,33 +9,6 @@ import "./Home.css";
 import axios from "axios";
 
 export default function Home() {
-  const navigate = useNavigate();
-  const [checkingToken, setCheckingToken] = useState(true);
-
-  useEffect(() => {
-    // Check if the user already has a valid token
-    // Validate token with server
-    axios.defaults.withCredentials = true;
-    axios.get("/validateToken")
-      .then((response) => {
-        if (response.data.valid) {
-          setCheckingToken(false);
-        } else {
-          console.log("token invalid");
-          navigate("/login");
-        }
-      })
-      .catch((error) => {
-        console.error("Token validation error:", error);
-        navigate("/login");
-      });
-
-  }, [navigate]);
-
-  if (checkingToken) {
-    return <div>Validating token...</div>;
-  }
-
   return (
     <MainLayout>
       <div className="home">

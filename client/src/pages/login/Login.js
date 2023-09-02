@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthenticationLayout from "../../layout/AuthenticationLayout";
 import Logo from "../../components/ui/Logo";
 import axios from "axios";
+import CheckingToken from "../../components/ui/CheckingToken";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function Login() {
         }
       })
       .catch((error) => {
+        console.log(error);
         setCheckingToken(false);
       });
   }, [navigate]);
@@ -59,7 +61,7 @@ export default function Login() {
   };
 
   if (checkingToken) {
-    return <div>Validating Token...</div>;
+    return <CheckingToken />;
   }
 
   return (
