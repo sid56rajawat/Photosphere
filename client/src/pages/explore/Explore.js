@@ -1,6 +1,6 @@
 import React from "react";
 import GridPost from "./GridPost";
-import "./explore.css"
+import "./explore.css";
 import MainLayout from "../../layout/MainLayout";
 
 export default function Explore() {
@@ -191,19 +191,19 @@ export default function Explore() {
 
   return (
     <MainLayout>
-    <div className="explore-window">
-      <div className="grid-container">
-        {posts.map((post, index) => (
-          <GridPost
-            key={index}
-            imageSrc={post.imageSrc}
-            likes={post.likes}
-            comments={post.comments}
-            postID={post.postID}
-          />
-        ))}
+      <div className="explore-window">
+        <div className="grid-container">
+          {posts.map((post, index) => (
+            <GridPost
+              key={index}
+              imageSrc={post.imageSrc}
+              likes={post.likes}
+              comments={post.comments}
+              postID={post.postID}
+            />
+          ))}
+        </div>
       </div>
-    </div>
     </MainLayout>
   );
 }

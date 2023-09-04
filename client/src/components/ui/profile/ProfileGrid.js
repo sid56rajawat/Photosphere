@@ -1,6 +1,6 @@
 import React from "react";
 import GridPost from "../../../pages/explore/GridPost.js";
-import "../../../pages/explore/explore.css"
+import "../../../pages/explore/explore.css";
 
 export default function Explore() {
   const posts = [
